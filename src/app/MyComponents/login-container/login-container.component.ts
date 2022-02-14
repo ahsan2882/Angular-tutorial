@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login-container',
@@ -6,10 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./login-container.component.css']
 })
 export class LoginContainerComponent implements OnInit {
-  @Input() page: string = "";
-  constructor() { }
+  page: string = "";
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
+    this.page = this.location.path().slice(1)
   }
 
 }
