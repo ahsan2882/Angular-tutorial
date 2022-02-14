@@ -1,9 +1,9 @@
-<section class="w-full max-w-5xl bg-white mx-auto flex py-12 rounded-2xl items-center justify-evenly px-8 loginSec">
+<section class="w-full max-w-5xl bg-white flex py-12 rounded-2xl items-center justify-evenly px-8 loginSec">
     <section class="w-1/2 leftSec">
         <img src="../../../assets/images/loginLogo.jpg" alt="Login Page Logo" class="w-full h-full object-cover">
     </section>
     <section class="w-1/2 flex flex-col items-center justify-evenly rightSec">
-        <form (submit)="submitForm()" class="flex flex-col items-start justify-around w-5/6 mx-auto">
+        <form (ngSubmit)="submitForm()" class="flex flex-col items-start justify-around w-5/6 mx-auto">
             <h1 class="self-center text-2xl mb-8">Welcome</h1>
             <div class="flex flex-col my-4 w-full border-b-2 border-black rounded-b-md">
                 <label for="email">Email:&nbsp;</label>
