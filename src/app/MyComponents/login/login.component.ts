@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  @Output() formSubmit = new EventEmitter();
   userEmail: string = "ahsan@gmail.com";
-  userPass: string = "password123"
+  userPass: string = "password123";
   constructor() {
 
   }
@@ -15,16 +17,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   submitForm() {
-    // console.log(this.userEmail, this.userPass);
-    // let emailVal = document.getElementById("email").value;
-    // let passVal = document.getElementById("password").value;
-    // if (emailVal === this.userEmail && passVal === this.userPass) {
-    //   console.log("Logged in")
-    // } else {
-    //   alert("Wrong username or password");
-    // }
-    // console.log(emailVal, passVal);
-    console.log("submitting form")
+    let emailField: HTMLInputElement = document.getElementById("email") as HTMLInputElement;
+    let passField: HTMLInputElement = document.getElementById("password") as HTMLInputElement;
+    if (emailField.value === this.userEmail && passField.value === this.userPass) {
+      console.log("Logged in")
+    } else {
+      alert("Wrong username or password");
+    }
   }
   showPassword() {
     // let passField = document.querySelector("#password");
