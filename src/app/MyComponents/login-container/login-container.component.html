@@ -2,9 +2,9 @@
     <section
         [ngClass]="page === 'login' ? 'bg-gradient-to-br from-indigo-300 via-violet-500 to-purple-800' : 'bg-gradient-to-tr from-fuchsia-500 via-purple-400 to-violet-400'"
         class="w-full h-full flex items-center justify-center">
-        <app-login *ngIf="page === 'login'; else signupShow"></app-login>
+        <section app-login *ngIf="page === 'login'; else signupShow"></section>
         <ng-template #signupShow>
-            <app-signup></app-signup>
+            <section app-signup></section>
         </ng-template>
     </section>
 </section>
