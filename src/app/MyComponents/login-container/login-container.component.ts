@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-login-container',
+  selector: 'section [app-login-container]',
   templateUrl: './login-container.component.html',
   styleUrls: ['./login-container.component.css']
 })
