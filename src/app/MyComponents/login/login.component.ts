@@ -1,8 +1,8 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
+  selector: '[app-login]',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
   @Output() formSubmit = new EventEmitter();
   userEmail: string = "ahsan@gmail.com";
   userPass: string = "password123";
-  constructor() {
+  constructor(private router: Router) {
 
   }
 
@@ -20,7 +20,8 @@ export class LoginComponent implements OnInit {
     let emailField: HTMLInputElement = document.getElementById("email") as HTMLInputElement;
     let passField: HTMLInputElement = document.getElementById("password") as HTMLInputElement;
     if (emailField.value === this.userEmail && passField.value === this.userPass) {
-      console.log("Logged in")
+      console.log("Logged in");
+      this.router.navigate([''])
     } else {
       alert("Wrong username or password");
     }
